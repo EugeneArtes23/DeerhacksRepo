@@ -3,6 +3,7 @@ import discord
 import random
 import os
 import json
+from replit import db
 
 
 client = discord.Client()
