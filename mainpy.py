@@ -1,8 +1,10 @@
 from urllib import response
 import discord
 import random
+import os
+import requests
+import json
 
-TOKEN = 'OTY5NzkyMjQ5MDMyNDc4Nzkw.Ymyjag.v9l6spz5gdtLiRPp-W8_oVE56w4'
 
 client = discord.Client()
 
@@ -31,4 +33,4 @@ async def on_message(message):
         await message.channel.send(response)
         
 
-client.run(TOKEN)
+client.run(os.getenv('TOKEN'))
