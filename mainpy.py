@@ -1,6 +1,7 @@
 from urllib import response
 import discord
 import random
+import requests
 
 TOKEN = 'OTY5NzkyMjQ5MDMyNDc4Nzkw.Ymyjag.v9l6spz5gdtLiRPp-W8_oVE56w4'
 
