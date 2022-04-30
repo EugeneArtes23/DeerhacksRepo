@@ -2,7 +2,6 @@ from urllib import response
 import discord
 import random
 import os
-import requests
 import json
 
 
