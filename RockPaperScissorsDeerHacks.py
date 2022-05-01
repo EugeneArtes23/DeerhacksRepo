@@ -1,39 +1,41 @@
 import random
-class RPS:
-    def __init__(self,action):
-        self.action = action
-        
-    def gameRPS(self) -> str:
-        reaction = ["Rock","Paper","Scissors"]
-        ranReaction = random.choice(reaction)
-        if self.action == ranReaction:
+import enum
 
-            print("Enemy plays",ranReaction,", it's a draw")
-            
-        elif self.action == "Rock":
+class Condition(enum.Enum):
+    Win = 1
+    Lose = 2
+    Drew = 3
 
-            if ranReaction == "Scissors":
-                print("Enemy plays",ranReaction,", you win!")
-                
+class Choices(enum.Enum):
+    rock = 1 
+    paper = 2
+    scissors = 3
+
+class RPS():
+    def __init__(self):
+        self.compChoice = Choices(random.randint(1,3)).name
+        self.outcome = 'Win'
+
+    def Play(self,action=str):
+        if action == self.compChoice:
+            self.outcome = Condition(3).name
+
+        elif action == Choices(1).name:
+            if self.compChoice == Choices(3).name:
+                self.outcome = Condition(1).name
             else:
-                print("Enemy plays",ranReaction,", you lose!")
-                
-        elif self.action == "Paper":
+                self.outcome = Condition(2).name
 
-            if ranReaction == "Rock":
-                print("Enemy plays",ranReaction,", you win!")
-                
+        elif action == Choices(2).name:
+            if self.compChoice == Choices(1).name:
+                self.outcome = Condition(1).name
             else:
-                print("Enemy plays",ranReaction,", you lose!")
-               
-        elif self.action == "Scissors":
+                self.outcome = Condition(2).name
 
-            if ranReaction == "Paper":
-                print("Enemy plays",ranReaction,", you win!")
-               
+        elif action == Choices(3).name:
+            if self.compChoice == Choices(2).name:
+                self.outcome = Condition(1).name
             else:
-                print("Enemy plays",ranReaction,", you lose!")
-        else:
-            print("Wrong Move")     
-playerAction = RPS(input("Enter Choice (Rock/Paper/Scissors): "))
-playerAction.gameRPS()
+                self.outcome = Condition(2).name
+
+
