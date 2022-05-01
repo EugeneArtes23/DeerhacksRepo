@@ -1,4 +1,16 @@
+import enum
 import random
+from time import sleep
+
+class CatchValues(enum.Enum):
+    Tuna = 5
+    Bass = 10
+    Crate_of_Gold = 1000
+    Crate_of_Fish = 500
+    Swordfish = 250
+    Shark = 750
+    Whale = 1000
+    Megalodon = 2000
 
 class Literal_Fishing:
     def __init__(self,fish):
@@ -8,7 +20,7 @@ class Literal_Fishing:
         # Possible catches the player can fish
         pool = ["Nothing","Boot","Seaweed","Tin Can","Goldfish","Tuna","Bass",
                 "Crate of Randomness","Crate of Gold","Crate of Fish","Swordfish",
-                "Shark","Whale","Megladon"]
+                "Shark","Whale","Megalodon"]
 
         # All print statements of player's catches
         if self.fish == "Yes":            
@@ -65,14 +77,15 @@ class Literal_Fishing:
                 print("You got a Whale!")                 
                 print("I thought that was Moby Dick... It's just a regular whale.") 
 
-            elif player_fishing == "Megladon":
-                print("You got a Megladon!")                 
+            elif player_fishing == "Megalodon":
+                print("You got a Megalodon!")                 
                 print("Oh wow... I thought they were extinct!")                                                                                                                                                                     
 
         else:
             print("Call me again if you want to fish!")
 
 print("Possible Catches:")
+sleep(2)
 print("Nothing")
 print("Boot")
 print("Seaweed")
@@ -86,7 +99,17 @@ print("Crate of Fish")
 print("Swordfish")
 print("Shark")
 print("Whale")
-print("Megladon\n")
-
+print("Megalodon\n")
+sleep(1.5)
 player_fish = Literal_Fishing(input("Would you like to go fishing? (Yes/No): "))
+print("*********J")
+sleep(1)
+print("*******J")
+sleep(1)
+print("*****J")
+sleep(1)
+print("***J")
+sleep(1)
+print("*J")
+sleep(1)
 player_fish.play_game()
